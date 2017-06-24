@@ -1,0 +1,182 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+*{
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+	background-color: 0; */
+	
+}
+
+html{
+	background-color: #efefef;
+	
+}
+
+body{
+	font:14px/1.5 Arial, Helvetica, sans-serif;
+	margin:0px;
+	text-transform: none;
+    -webkit-transition-duration: 0.4s; Safari
+    transition-duration: 0.4s;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	/* width: 90%; */
+    background-color: #f4f4f4;
+	transition: background-color .5s;
+}
+
+
+header{
+    box-sizing: border-box;
+	height: 90px;
+	text-align: center;
+/* 	text-shadow: 0 12px 16px 0 rgba(0,0,0,0.20),0 10px 50px 0 rgba(0,0,0,0.19);
+ */ /* width: auto */ 
+	margin:0px 0px 0px 0px;
+    padding: auto;
+    background-color: 0;
+    overflow: hidden;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	page-break-after: avoid;
+	table-layout: fixed;
+
+}
+
+header :hover{
+	/* box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); */
+	
+}
+
+header h1{
+    float: left;
+	font: block 40 px/1.5 'Open Sans', sans-serif;
+	background-color: 0;
+	color: black;
+	font-family: "Times New Roman", times, serif
+	/* font-size: 60 px */
+}
+
+header a{
+    float: right;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 40px;
+    border-radius: 3px;
+    font: bold 14px/1 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    background-color:white;
+	margin: 4px 4px;
+	cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+	background-color: #ff5c33;
+    color: white;
+    border: 2px solid #e7e7e7;
+}
+header a:hover{
+	box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+	background-color: black;
+	}	
+/* ul {
+    list-style: none;
+    border-bottom: 1px solid #EAEAEA;
+    background-color: 0;
+    padding: 10px;
+    margin-top: 0;
+    text-align: center;
+    margin-bottom: 0;
+} 
+
+ul a{
+    text-decoration: none;
+    color: #000;
+    text-align: left;
+    background-color: 0;
+    padding: 10px 16px;
+    border-radius: 2px;
+    opacity: 0.8;
+    font-size: 16px;
+    display: inline-block;
+    margin: 4px;
+    line-height: 1;
+    outline: none;
+
+    transition: 0.2s ease;
+} 
+
+ul li a.active{
+    background-color: #F05283;
+    pointer-events: none;
+	
+}
+
+ul li a:hover {
+    opacity: 1;
+	box-shadow:0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+ul li{
+    display: inline-block;
+} */
+
+
+@media (max-width: 1000px) {
+
+
+    header h1{
+        float: none;
+    }
+
+    header a{
+        margin-top: 25px;
+        float: none;
+    }
+
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+
+.main-content{
+    margin-bottom: 75px;
+}
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+	#bsaHolder{ display:none;}
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media all and (max-width: 700px) {
+    #img2 {
+        position: absolute;
+        left: 12px;
+        top: 14px;
+        width: 94%;
+    }
+}
+
+
+/* -- Link to Tutorialzine -- */
+
+.tz-link{
+	text-decoration: none;
+	color: #fff !important;
+	font: bold 36px Arial,Helvetica,sans-serif !important;
+}
+
+.tz-link span{
+	color: #da431c;
+}

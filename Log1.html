@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html>
+<!-- ***************************************
+*******powerd by Suliman Farzat 2017********
+*************for Fritz-Gruppe***************
+******************************************** -->
+   <head>
+      <title>Fritz Gruppe</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="CSS/w3.css">
+      <link rel="stylesheet" href="CSS/demo.css">
+      <link rel="stylesheet" href="CSS/form-basic.css">
+      <!-- table -->
+      <link rel="stylesheet" href="CSS/bootstrap-table.css">
+      <link rel="stylesheet" href="js/bootstrap-table-master/docs/assets/bootstrap/css/bootstrap.css">
+	  <style>
+		.btnn {
+				background-color: #008CBA;
+				padding: 8px 14px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+				margin-bottom:20px;
+				font-size: 16px;
+				font-weight:600;
+				-webkit-transition-duration: 0.4s; /* Safari */
+				transition-duration: 0.4s;
+				cursor: pointer;
+				color: #fff; 
+				border: 4px solid #ffc107;
+			}
+		.btnn:hover {
+				background-color: #ffc107;
+				border: 4px solid #ffc107;
+				color: white;
+				text-decoration: none;
+				}
+	  </style>
+   </head>
+   <body id="body">
+      <div id="mySidenav" class="form-basic w3-sidenav w3-dropnav w3-azure-blue">
+         <a href="javascript:void(0)" class="w3-hover-red w3-closebtn" onclick="closeNav()">&times;</a>
+         <br>
+         <br>
+         <a href="index.html">Dashboard</a>
+         <a class="active" href="log1.html">Log1</a>
+         <a href="Log2.html">Log2</a>
+         <a href="Log3.html">Log3</a>
+      </div>
+      <div id="main" style="width:0px;height:0px;padding:0px;background-color:#39393a;">
+         <i style="cursor:pointer;margin:20px;font-size:35px;background-color:transparent;color:#fff" onclick="openNav()" class="w3-display-topleft material-icons">&#xE5D2;</i>
+      </div>
+      <ul class="w3-navbar w3-display-topmiddle w3-azure-blue">
+         <li><a class="w3-text-white" href="index.html">Dashboard</a></li>
+         <li><a class="active w3-text-white" href="Log1.html">Log1</a></li>
+         <li><a class="w3-text-white" href="Log2.html">Log2</a></li>
+         <li><a class="w3-text-white" href="Log3.html">Log3</a></li>
+         <!--  <div id="chart_div1" style="" class="w3-center w3-text-teal"></div>  -->
+      </ul>
+      <script>
+         function openNav() {
+         	document.getElementById("mySidenav").style.width = "200px";
+         	document.getElementById("mySidenav").style.width = "200px";
+         	document.getElementById("main").style.marginLeft = "200px";
+         	document.getElementById("inhalt").style.marginLeft = "200px";
+         	document.getElementById("inhalt").style.filter = 'alpha(opacity=50)';
+         	document.getElementById("inhalt").style.opacity = "0.4";
+         	document.getElementById("main").style.color = "#ff6c49";
+         	document.getElementById("main").style.display = "none";
+         	document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+         }
+         
+         function closeNav() {
+         	document.getElementById("mySidenav").style.width = "0";
+         	document.getElementById("main").style.marginLeft = "0";
+         	document.getElementById("inhalt").style.marginLeft = "0";
+         	document.getElementById("inhalt").style.filter = null;
+         	document.getElementById("inhalt").style.opacity = null;
+         	document.getElementById("main").style.color = "red";
+         	document.getElementById("main").style.display = "block";
+         	document.body.style.backgroundColor = "#efefef";
+         }
+      </script>
+      <!-- log1 .............................................................................-->
+      <div id="inhalt" class="main-content">
+         <form class="form-basic w3-white" method="post" action="#">
+            <header class="w3-azure-blue imate-top">
+               <img src="img/logo.png" alt="Fritz Gruppe" style="width:150px;height:30px;margin:30px;" class="margin w3-display-topright">
+               <!-- <h1 style="text-transform: uppercase; font: bold 25px/50px Georgia, serif;">KPI Dachboard</h1>	 -->
+               <!-- <a href="http://www.fritz-gruppe.de/">Fritz-Gruppe.de</a>	 -->
+               <div id="dem" class=""></div>
+            </header>
+            <div class="w3-row">
+               <a href="javascript:void(0)" onclick="openCity(event, 'BöHö1 OG');">
+                  <div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">BöHö1 OG</div>
+               </a>
+               <a href="javascript:void(0)" onclick="openCity(event, 'Keller');">
+                  <div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Keller</div>
+               </a>
+               <a href="javascript:void(0)" onclick="openCity(event, 'Bechtle Halle');">
+                  <div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Bechtle Halle</div>
+               </a>
+               <a href="javascript:void(0)" onclick="openCity(event, 'GIF');">
+                  <div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">GIF</div>
+               </a>
+               <a href="javascript:void(0)" onclick="openCity(event, 'A14');">
+                  <div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">A14</div>
+               </a>
+            </div>
+            <!-- *****************************************BöHö1************** ...............................................................................................................-->
+            <div id="BöHö1 OG" class="w3-container city w3-blue-grey" style="display:true">
+               <nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">
+                  <h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">BÖHö1 OG</h3>
+                  <div>
+                     <i id="fliptabelle" style="" class="w3-hover-text-blue material-icons w3-xxxlarge w3-accordion w3-text-amber" href="#">&nbsp;&#xE42A; </i>
+                     Pauschale Tabelle ansehen
+                  </div>
+               </nav>
+               <!-- ..........................................................table start.................................................... -->				
+               <div class="w3-container" id="paneltabelle" style="display:none;margin:20px 0px 150px 0;">
+                  <table id="table" class="btn-default w3-small" 
+                     data-striped="true" data-toggle="table" data-toolbar="#toolbar" 
+                     data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-pagination="true"
+                     data-show-export="true" data-page-list="[10, 25, 50, 100, ALL]" data-page-size="50" data-page-number="50">
+                     <thead>
+                        <tr>
+                           <th class="w3-bottombar w3-hell-blue"></th>
+                           <th colspan="13" class="w3-center w3-hell-blue w3-bottombar">Leistungsindikator</th>
+						   <th colspan="3" class="w3-center w3-hell-blue w3-bottombar">Arbeitsstunden</th>
+                           <th colspan="3" class="w3-center w3-blue w3-bottombar">KPI</th>
+                        </tr>
+                        <tr>
+                           <th data-field="Datum" data-sortable="false">Datum</th>
+                           <th data-field="KACO" data-sortable="true">KACO</th>
+                           <th data-field="KACO_GSD" data-sortable="true">GSD</th>
+                           <th data-field="Söhner" data-sortable="true">Söhner</th>
+                           <th data-field="LTI" data-sortable="true">LTI</th>
+                           <th data-field="Intersport" data-sortable="true">Intersport</th>
+                           <th data-field="KS_Huayu" data-sortable="true">KS</th>
+                           <th data-field="Weber_wagenheber" data-sortable="true">Weber</th>
+                           <th data-field="BöHö1_OG" data-sortable="true" class="w3-weight">BöHö1 OG</th>
+                           <th data-field="Porsche" data-sortable="true">Porsche</th>
+                           <th data-field="Keller" data-sortable="true" class="w3-weight">Keller</th>
+                           <th data-field="Mann_Schröder" data-sortable="true">M&amp;S</th>
+                           <th data-field="Unilever" data-sortable="true">Unilever</th>
+                           <th data-field="Bechtle" data-sortable="true" class="w3-weight">Bechtle</th>
+                           <th data-field="IST BöHö1 OG" data-sortable="true" class="">IST BöHö1</th>
+						   <th data-field="IST Keller" data-sortable="true" class="">IST Keller</th>
+						   <th data-field="IST Bechtle" data-sortable="true" class="">IST Bechtle</th>
+                           <th data-field="KPI_BöHö_OG" data-sortable="true" class="w3-text-red">KPI BöHö OG</th>
+                           <th data-field="KPI_Keller" data-sortable="true" class="w3-text-red">KPI Keller</th>
+                           <th data-field="KPI_Bechtle" data-sortable="true" class="w3-text-red">KPI Bechtle</th>
+                        </tr>
+                     </thead>
+                  </table>
+               </div>
+               <br><br><br><br>
+               <!-- ..........................................................table end........................................... -->									
+               <div class="w3-container">
+                  <div class="w3-row knopf" style="">
+                     <div id="flip" style="min-width:140px;" class="w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('q1panel').style.display='none';document.getElementById('q2panel').style.display='none';return false;">
+                        <i class="material-icons w3-xxxlarge">&#xE01D;</i>
+                        <br>Q4 2016
+                     </div>
+                     <div id="q1flip" style="min-width:140px;" class="w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('panel').style.display='none';document.getElementById('q2panel').style.display='none';return false;">
+                        <i class="material-icons w3-xxxlarge">&#xE01D;</i>
+                        <br>Q1 2017
+                     </div>
+                     <div id="q2flip" style="min-width:140px;" class=" w3-card-12 w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('q1panel').style.display='none';document.getElementById('panel').style.display='none';return false;">
+                        <i class="material-icons w3-xxxlarge">&#xE01D;</i>
+                        <br>Q2 2017
+                     </div>
+                     <div id="" style="min-width:140px;" class=" w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('##').style.display='none';return false;">
+                        <i class="material-icons w3-xxxlarge">&#xE01D;</i>
+                        <br>Q3 2017
+                     </div>
+                  </div>
+                  <div class="">
+                     <div id="panel" style="display:none;width:auto;height:auto;margin-top:2em;">
+                        <div method="post" action="#">
+                           <div id="container2016" class="form-container" style="width:100%;height:400px;"></div>
+                           <!-- <div id="container" class="form-container" style="width:100%;"></div> -->
+                        </div>
+                     </div>
+                     <!-- ..............................................container BöHö1 OG 2017.................................................................. -->
+                     <div id="q1panel" style="display:none;width:auto;height:auto;">
+                        <div method="post" action="#">
+                           <div id="container2017" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;">
+                              <div class="loader" style="width:100% !important;height:400px;margin:0 auto;"></div>
+                           </div>
+                        </div>
+                     </div>
+					 <div id="q2panel" style="width:auto;height:auto;">
+                        <div method="post" action="#">
+                           <div id="container2017_q2" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;">
+                              <!-- <div class="loader" style="width:100% !important;height:400px;margin:0 auto;"></div> -->
+							  <div id="loader"></div>
+                           </div>
+                        </div>           
+                     </div>
+                     <br>
+                     <!-- ....................................................end............................................................ -->
+                  </div>
+                  <div class="w3-container w3-center w3-margin-bottom" >
+                     <h2 id="gestern"></h2>
+                     <h3 class="w3-large w3-text-amber"><i class="w3-xxlarge material-icons">&#xE88F;</i>&nbsp;Alle Daten vorhanden <br></h3>
+                     <div class="w3-row" style="justify-content:center;display:flex;">
+                        <div class="w3-col m2" style="border-radius:50px 0px 0px 50px;background:rgba(80, 255, 84, 0.5); height:60px;">
+                           <h3 style="font-weight:bold;">KPI Ziel</h3>
+                        </div>
+                        <div class="w3-col m2 w3-text-green w3-border-green w3-border" style="border-radius:0px 50px 50px 0px;background:rgba(255,255,255, 0.7);height:60px;">
+                           <h3 style="font-weight:800;">30 &nbsp;&nbsp;&nbsp;<i class="material-icons" style="font-weight:800;">trending_up</i></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- ..........................................täglich BöHö1...................................................................... -->
+               <div class="form-speed">
+                  <div class="form-container" id="container-speed" style="min-width:310px;width:400px;height:200px; float:left;margin:5px;"></div>
+                  <div class="form-container" id="container-rpm" style="min-width:310px;width:400px;height:200px; float:left;margin:5px;"></div>
+               </div>
+               <!-- ................................................end................................................................ -->
+               <br>
+            </div>
+            <!-- ....................********************************************keller********************************....................................................................... -->
+            <div id="Keller" class="w3-container city w3-blue-grey" style="display:none;">
+               <nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">
+                  <h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">Keller</h3>
+               </nav>
+               <p>KPI Diagramm Q2 2017.</p>
+               <div class="w3-container w3-margin-bottom">
+                  <div class="w3-row w3-margin-top w3-center knopf" style="justify-content:center;display:flex;">
+                     <div  id="flip-keller-q4-2016" onclick="document.getElementById('panel-keller-q1').style.display='none';document.getElementById('panel-keller-q2').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q4 2016
+                     </div>
+                     <div  id="flip-keller-q1" onclick="document.getElementById('panel-keller-q4-2016').style.display='none';document.getElementById('panel-keller-q2').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q1 2017
+                     </div>
+					 <div  id="flip-keller-q2" onclick="document.getElementById('panel-keller-q4-2016').style.display='none';document.getElementById('panel-keller-q1').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q2 2017
+                     </div>
+                  </div>
+                  <!-- <h3 class="w3-center w3-medium w3-text-amber"><i class="w3-xlarge material-icons">&#xE88F;</i>Audi A8 und Weber noch nicht eingeführt</h3> -->
+                  </div>
+				  <div class="w3-container w3-margin-bottom">
+				  <div id="panel-keller-q4-2016"  style="display:none;width:auto;height:auto;">
+                     <div class="w3-bordered" method="post" action="#">
+                        <div id="keller_q4_2016" style="width:100% !important;height:400px;margin:0 auto;" class=" form-container w3-margin-bottom"></div>
+                     </div>
+                  </div>
+                  <div id="panel-keller-q1"  style="display:none;width:auto;height:auto;">
+                     <div class="w3-bordered" method="post" action="#">
+                        <div id="keller_q1_2017" style="width:100% !important;height:400px;margin:0 auto;" class=" form-container w3-margin-bottom"></div>
+                     </div>
+                  </div>
+				  <div id="panel-keller-q2"  style="width:auto;height:auto;">
+                     <div class="w3-bordered" method="post" action="#">
+                        <div id="keller_q2_2017" style="width:100% !important;height:400px;margin:0 auto;" class="form-container w3-margin-bottom"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- ............**********************************Bechtle********************************..................................................................... -->
+            <div id="Bechtle Halle" class="w3-container city w3-blue-grey" style="display:none">
+               <nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">
+                  <h3 class="w3-bottombar w3-col s8 w3-border-amber" style="font-weight:800;">Bechtle Halle</h3>
+				  
+					  
+				  
+               </nav>
+               <p>KPI Diagramm Q2 2017.</p>
+			   <a class="w3-btn w3-amber w3-hover-white w3-padding-12" style="margin-bottom:20px" href="#skhStück">zu SKH Umpack</a>
+			    <div class="w3-row w3-margin-top w3-center knopf" style="justify-content:center;display:flex;">
+                     <div  id="flip-bechtle-q1" onclick="document.getElementById('panel-bechtle-q2').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q1 2017
+                     </div>
+					 <div  id="flip-bechtle-q2" onclick="document.getElementById('panel-bechtle-q1').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q2 2017
+                     </div>
+                </div>
+				<div style="margin-top:5em;">
+				<div id="panel-bechtle-q1" style="display:none;width:auto;height:auto;">
+				   <div class="w3-margin-bottom" method="post" action="#">
+					  <div id="bechtle_q1_2017" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;"></div>
+				   </div>
+				</div>
+				<div id="panel-bechtle-q2" style="width:auto;height:auto;">
+				   <div class="w3-margin-bottom" method="post" action="#">
+					  <div id="bechtle_q2_2017" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;"></div>
+				   </div>
+				</div>	
+				</div><!-- skh mitarbeiter -->
+					<div id="" style="width:auto;height:auto;margin-bottom:50pX;">
+						<div class="w3-margin-bottom" method="post" action="#">
+							<div id="bechtle_skh_2017" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;"></div>
+						</div>
+					</div>
+					
+				<!-- skh stückzahl table	 -->
+				<div id="skhStück" class="w3-card-4 w3-panel w3-margin" style="border:8px solid">
+					<div class="w3-container w3-col w3-half w3-margin-top w3-large">
+					<h2 class="w3-weight">SKH tägliche Bewegungen in Stück. </h2><br>
+					<p>Die umgepackte und nicht umgepackte Stückzahlen sind immer in der folgenden Tabelle aktuell.</p>
+					<p>Aufgrund dieser Zahlen mit Division der täglichen Arbeitsstunden, sowei bei allen Kunden wird KPI kennzahl berechnet.</p>
+					</div>
+					<div class="w3-container w3-col w3-half w3-right">
+					  <table id="tableSkh" class="btn-default w3-small" 
+						 data-striped="true" data-toggle="table" data-toolbar="#toolbar" 
+						 data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-pagination="true"
+						 data-show-export="true" data-page-list="[10, 25, 50, 100, ALL]" data-page-size="10" data-page-number="300">
+							 <thead>
+								<tr>
+								   <th data-field="Datum" data-sortable="false">Datum</th>
+								   <th data-field="SKH_Umgepackt" data-sortable="true">Umgepackt / Stück</th>
+								   <th data-field="SKH_nichtUmgepackt" data-sortable="true">nicht umgepackt / Stück</th>
+								</tr>
+							 </thead>
+						</table>
+					</div>
+                </div>	
+				<!-- skh rechner -->
+					<div class="w3-card-4 w3-panel w3-white w3-margin" action="#">							
+							<div class="w3-container">
+								<ul class="w3-col s7 w3-margin-top w3-large">
+									<h2 class="w3-text-blue w3-weight">SKH Mitarbeiter Rechner</h2><br />
+									<p class="w3-text-grey">Wie viele Mitarbeiter werden am Tag benötigt? </p>
+									<p class="w3-text-grey">Die Berechnung basiert auf der unteren Tabelle und der Einschätzung der Standortleitung.</p>
+									<li class="w3-text-grey">Umpackvorgänge:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<time class="w3-codespan">&#8709; 05:75 Sek/Teil</time></li>
+									<li class="w3-text-grey">nicht Umpackvorgänge:&nbsp;<time class="w3-codespan">&#8709; 02:00 Sek/Teil</time></li>
+									
+									
+								</ul>
+							    <div class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin w3-col s3">   
+									<div class="w3-section">
+									<label class="">Anzahl Umpackvorgänge:</label>
+									<input id="menge" class="w3-margin-bottom" name="menge" type="text" placeholder="Stückzahl eintragen" />    
+									<label class="">Anzahl nicht Umpackvorgänge:</label>
+									<input id="menge2" class="" name="menge2" type="text" placeholder="Stückzahl eintragen" /> 
+									<div onclick="calc()" class="w3-button w3-hover-azure-blue w3-block w3-section w3-center w3-blue w3-ripple w3-padding-12">berechnen</div>	
+									<label id="result" name="r1" class=" w3-margin-right w3-text-red"> 0 &nbsp; &nbsp; </label>
+									<label>Mitarbeiter pro Tag.</label>
+									</div>
+								</div>
+
+							  <table class="w3-table-all w3-tiny">
+								<tr>
+								  <th>Pal / Beh</th>
+								  <th>Teile</th>
+								  <th>Zeit</th>
+								  <th>Zeit je Teil</th>
+								</tr>
+								<tr>
+								  <td>1 Palette 360 St </td>
+								  <td>81A 809 487 A / 488 A </td>
+								  <td>18 min</td>
+								  <td>3</td>
+								</tr>
+								<tr>
+								  <td>1 Palette 360 St</td>
+								  <td>8W6 809 567 / 568</td>
+								  <td>20 min </td>
+								  <td>3,3 </td>
+								</tr>
+								<tr>
+								  <td>1 Palette 1500 St </td>
+								  <td>4M0 809 507 A / 508 A</td>
+								  <td>185 min </td>
+								  <td>7,4 </td>
+								</tr>
+								<tr>
+								  <td>1 Palette 600 St</td>
+								  <td>4M0 810 659 / 660</td>
+								  <td>55 min </td>
+								  <td>5,5</td>
+								</tr>
+								<tr>
+								  <td>1 Palette 210 St</td>
+								  <td>4G1 419 250 A </td>
+								  <td>20 min </td>
+								  <td>5,7</td>
+								</tr>
+								<tr>
+								  <td>1 Behälter  200 St</td>
+								  <td>81A 809 621 / 622</td>
+								  <td>20 min </td>
+								  <td>6</td>
+								</tr>
+								<tr>
+								  <td>1 Behälter 130 St</td>
+								  <td>8W6 809 075 / 076</td>
+								  <td>18 min </td>
+								  <td>8,3</td>
+								</tr>
+								<tr>
+								  <td>1 Behälter 500 St</td>
+								  <td>8V4 831 315 / 316</td>
+								  <td>60 min </td>
+								  <td>7,2</td>
+								</tr><tr>
+								  <td>1 Behälter  30 St</td>
+								  <td>8W6 809 424</td>
+								  <td>5 min </td>
+								  <td>10</td>
+								</tr>
+								</tr><tr>
+								  <td>1 Behälter 134 St</td>
+								  <td>4M0 802 231 B / 232 B</td>
+								  <td>12 min </td>
+								  <td>5,3</td>
+								</tr><tr>
+								  <td>1 Behälter 250 St</td>
+								  <td>4G0 802 695 A / 696 A </td>
+								  <td>10 min </td>
+								  <td>2,4</td>
+								</tr><tr>
+								  <td>1 Behälter 30 St</td>
+								  <td>4M0 825 911</td>
+								  <td>4 min </td>
+								  <td>8</td>
+								</tr><tr>
+								  <td>1 Behälter 120 St</td>
+								  <td>4G0 802 695 / 696</td>
+								  <td>14 min </td>
+								  <td>7</td>
+								</tr>
+
+							  </table>
+							</div>
+
+					</div>
+					<br /> 
+				    <!-- end skh rechner -->	
+            </div>
+			
+            <!-- GIF......................................................................... -->
+            <div id="GIF" class="w3-container city w3-blue-grey" style="display:none">
+               <nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">
+                  <h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">GIF</h3>
+               </nav>
+               <p>KPI Diagramm Q2 2017.</p>
+			   <div class="w3-row w3-margin-top w3-center knopf" style="justify-content:center;display:flex;">
+                     <div  id="flip-gif-q1" onclick="document.getElementById('panel-gif-q2').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q1 2017
+                     </div>
+					 <div  id="flip-gif-q2" onclick="document.getElementById('panel-gif-q1').style.display='none';return false;" class="w3-col s2 w3-margin-top">
+                        <i class="material-icons w3-xxxlarge w3-margin-top" style="cursor:pointer;">&#xE01D;</i><br>Q2 2017
+                     </div>
+                </div>
+			    <div id="panel-gif-q1" style="display:none;width:auto;height:auto;">
+                        <div class="w3-margin-bottom" method="post" action="#">
+                           <div id="GIF_container2017_q1" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;">
+                              <div class="loader" style="width:100% !important;height:400px;margin:0 auto;"></div>
+                           </div>
+                        </div>
+				</div>
+				<div id="panel-gif-q2" style="width:auto;height:auto;">		
+						<div class="w3-margin-bottom" method="post" action="#">
+                           <div id="GIF_container2017_q2" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;">
+                              <div class="loader" style="width:100% !important;height:400px;margin:0 auto;"></div>
+                           </div>
+                        </div>     						
+                </div>
+            </div>
+            <!-- A14.......................................................................... -->
+            <div id="A14" class="w3-container city" style="display:none">
+               <h2>A14</h2>
+               <p>KPI.</p>
+            </div>
+         </form>
+      </div>
+      <table id="example"></table>
+      <footer>
+		<div id='samra'></div>
+         Powerd by: Suliman Farzat
+      </footer>
+	  <script>
+	function calc() {
+			var textType = Node.textContent ? 'textContent' : 'innerText',
+				num1 = parseFloat(document.getElementById('menge').value) || 0,
+				num2 = parseFloat(document.getElementById('menge2').value) || 0,
+				result = document.getElementById('result');
+				x = (((num1 * 0.091666666666)/ 60) / 7) + (((num2 * 0.03333333333)/ 60) / 7);
+				result[textType] = x.toFixed(3);
+				}
+				
+	$(document).keypress(function(e) {
+		if(e.which == 13) {			
+			var textType = Node.textContent ? 'textContent' : 'innerText',
+				num1 = parseFloat(document.getElementById('menge').value) || 0,
+				num2 = parseFloat(document.getElementById('menge2').value) || 0,
+				result = document.getElementById('result');
+				if (num1 != '' || num2 != ''){
+					x = (((num1 * 0.091666666666)/ 60) / 7) + (((num2 * 0.03333333333)/ 60) / 7);
+					result[textType] = x.toFixed(3);	
+					} else {
+						alert(location.hostname + 'SKH Rechner\nStückzahl bitte eingeben!');	
+					}
+		}
+		});
+	  </script>
+      <script type="text/javascript">
+         $(document).ready(function() {
+         	$("#flip").click(function() {
+         		$("#panel").slideToggle(1000);
+         	});
+         });
+         $(document).ready(function() {
+         	$("#q1flip").click(function() {
+         		$("#q1panel").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function() {
+         	$("#q2flip").click(function() {
+         		$("#q2panel").slideToggle("slow");
+         	});
+         });
+         $(document).ready(function() {
+         	$("#fliptabelle").click(function() {
+         		$("#paneltabelle").slideToggle("slow");
+         	});
+         });	
+         $(document).ready(function(){
+         	$("#flip-keller-q1").click(function(){
+         	$("#panel-keller-q1").slideToggle("slow");
+         	});
+         });
+         $(document).ready(function(){
+         	$("#flip-keller-q4-2016").click(function(){
+         	$("#panel-keller-q4-2016").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function(){
+         	$("#flip-keller-q2").click(function(){
+         	$("#panel-keller-q2").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function(){
+         	$("#flip-bechtle-q1").click(function(){
+         	$("#panel-bechtle-q1").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function(){
+         	$("#flip-bechtle-q2").click(function(){
+         	$("#panel-bechtle-q2").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function(){
+         	$("#flip-gif-q1").click(function(){
+         	$("#panel-gif-q1").slideToggle("slow");
+         	});
+         });
+		 $(document).ready(function(){
+         	$("#flip-gif-q2").click(function(){
+         	$("#panel-gif-q2").slideToggle("slow");
+         	});
+         });
+      </script>
+      <script type="text/javascript">
+         function openCity(evt, cityName) {
+         	var i, x, tablinks;
+         	x = document.getElementsByClassName("city");
+         	for (i = 0; i < x.length; i++) {
+         		x[i].style.display = "none";
+         	}
+         	tablinks = document.getElementsByClassName("tablink");
+         	for (i = 0; i < x.length; i++) {
+         		tablinks[i].className = tablinks[i].className.replace(" w3-border-amber", "");
+         	}
+         	document.getElementById(cityName).style.display = "block";
+         	evt.currentTarget.firstElementChild.className += " w3-border-amber";
+         }
+      </script>
+      <script type="text/javascript">
+         //var date = new Date((new Date()).valueOf() - 1000*60*60*24);
+         	// request a weekday along with a long date//////////////////////////////
+         //var options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+         	//d = (date.toLocaleDateString('de-DE', options));
+         	//document.getElementById("gestern").innerHTML = dat;		
+      </script>
+   </body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <!-- Diagramm -->
+   <script type="text/javascript" src="js/Highcharts.js"></script>
+   <script type="text/javascript" src="js/exporting.js"></script>
+   <script type="text/javascript" src="js/hochdiagramm-mehr.js"></script>
+   <script type="text/javascript" src="js/zeichen-gauge.js"></script>
+   <!-- <script type="text/javascript" src="js/highstock.js"></script> -->
+   <!-- soll stunde -->
+	<script type="text/javascript" src="js/log1/Bechtle/bechtle_soll_2017_skh.js"></script>
+   <!-- BöHö1 OG -->
+   <script type="text/javascript" src="js/log1/BöHö1OG_q4_2016_kunden.js"></script>
+   <script type="text/javascript" src="js/log1/BöHö1OG_q1_2017_kunden.js"></script>
+   <script type="text/javascript" src="js/log1/BöHö1OG_q4.js"></script>
+   <script type="text/javascript" src="js/log1/BöHö1OG_täglich.js"></script>
+   <script type="text/javascript" src="js/log1/BöHö1OG_q2_2017_kunden.js"></script>
+   
+   <!-- Keller -->
+   <script type="text/javascript" src="js/log1/Keller/keller_q4_2016_kunden.js"></script>
+   <script type="text/javascript" src="js/log1/Keller/keller_täglich.js"></script>
+   <script type="text/javascript" src="js/log1/Keller/keller_q1_2017_kunden.js"></script>
+   <script type="text/javascript" src="js/log1/Keller/keller_q2_2017_kunden.js"></script>
+   <!-- Bechtle -->
+   <script type="text/javascript" src="js/log1/Bechtle/bechtle_q1_2017_kunden.js"></script>
+   <script type="text/javascript" src="js/log1/Bechtle/bechtle_q2_2017_kunden.js"></script>
+    <!-- GIF -->
+   <script type="text/javascript" src="js/log1/gif/GIF_q1_2017.js"></script>
+   <script type="text/javascript" src="js/log1/gif/GIF_q2_2017.js"></script>
+   <!-- datenbank -->
+   <script type="text/javascript" src="js/log1/Log1-Datenbank.js"></script>
+   <!-- table -->
+   <script type="text/javascript"  src="js/bootstrap-table-master/docs/assets/js/jquery.min.js"></script>
+   <script type="text/javascript"  src="js/bootstrap-table-master/docs/assets/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript"  src="js/bootstrap-table-master/dist/bootstrap-table.js"></script>
+   <!--  put your locale files after bootstrap-table.js -->
+   <script type="text/javascript"  src="js/bootstrap-table-master/docs/dist/locale/bootstrap-table-de-DE.js"></script>
+   <script type="text/javascript"  src="js/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar.js"></script>
+   <script src="js/bootstrap-table-master/docs/dist/extensions/filter/bootstrap-table-filter.js"></script>
+   <!-- google chart -->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+   <script type="text/javascript">
+      $('#table, #tableSkh').bootstrapTable({
+          data: datenbank
+      });
+      
+   </script> 
+   <script type='text/javascript'>
+      $(window).load(function() {
+      	$(".loader").fadeOut("slow");
+      })
+   </script>
+   <script>
+      $(function () {
+          $('#table').bootstrapTable({
+              data: datenbank
+          });
+      
+          $(".mybtn-top").click(function () {
+              $('#table').bootstrapTable('scrollTo', 0);
+          });
+          
+          $(".mybtn-row").click(function () {
+              var index = +$('.row-index').val(),
+                  top = 0;
+              $('#table').find('tbody tr').each(function (i) {
+              	if (i < index) {
+                  	top += $(this).height();
+                  }
+              });
+              $('#table').bootstrapTable('scrollTo', top);
+          });
+          
+          $(".mybtn-btm").click(function () {
+              $('#table').bootstrapTable('scrollTo', 'bottom');
+          });
+      
+      });
+      <!-- ************* -->
+      
+   </script>
+   <script type='text/javascript'>
+      google.charts.load('current', {packages:["orgchart"]});
+         google.charts.setOnLoadCallback(drawChart);
+      
+         function drawChart() {
+           var data = new google.visualization.DataTable();
+           data.addColumn('string', 'Name');
+           data.addColumn('string', 'Manager');
+           data.addColumn('string', 'ToolTip');
+      
+           // For each orgchart box, provide the name, manager, and tooltip to show.
+           data.addRows([
+             [{v:'fritz', f:'Fritz Logistik<div style="color:red; font-style:italic">55</div>'},
+              '', 'KPI'],
+             [{v:'log1', f:'Log1<div style="color:red; font-style:italic">342</div>'},
+              'fritz', '123'],       
+             [{v:'BöHö1', f:'BöHö1 OG<div id="böhö1" style="color:red; font-style:italic">fff</div>'}, 'log1', '123'],
+             ['Keller', 'log1', ''],
+             ['Bechtle', 'log1', ''],
+             ['GIF', 'log1', ''],
+             ['A14', 'log1', ''],
+             ['Log2', 'fritz', ''],
+             ['BöHö3', 'Log2', ''],
+             ['Chemie', 'Log2', ''],
+             ['xxx', 'Log2', '']
+           ]);
+      
+           // Create the chart.
+           var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
+           // Draw the chart, setting the allowHtml option to true for the tooltips.
+           chart.draw(data, {allowHtml:true});
+         }
+   </script>
+   <script language="javascript" type="text/javascript" > 
+      $(document).ready(function(){ 
+        // add 30 more rows to the table 
+        var row = $('table#mytable > tbody > tr:first'); 
+        var row2 = $('table#mytable2 > tbody > tr:first'); 
+        for (i=0; i<30; i++) { 
+         $('table#mytable > tbody').append(row.clone()); 
+         $('table#mytable2 > tbody').append(row2.clone()); 
+        } 
+      
+        // make the header fixed on scroll 
+        $('.table-fixed-header').fixedHeader(); 
+      }); 
+   </script> 
+</html>

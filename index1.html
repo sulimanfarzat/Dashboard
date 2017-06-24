@@ -1,0 +1,1096 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!-- ***************************************
+*******powerd by Suliman Farzat 2017********
+*************for Fritz-Gruppe***************
+******************************************** -->
+ <head>
+
+	<title>Fritz Gruppe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="CSS\w3.css">
+    <link rel="stylesheet" href="CSS\demo.css">
+	<link rel="stylesheet" href="CSS\form-basic.css">
+    <!-- table -->
+    <link rel="stylesheet" href="CSS/bootstrap-table.css">
+     <link rel="stylesheet" href="js/bootstrap-table-master/docs/assets/bootstrap/css/bootstrap.css">
+<style>
+.material-icons{
+		vertical-align:-30%;
+}
+input[type="date"] {
+  padding: 10px;
+  width:222px;
+  border: solid 3px #c9c9c9;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+input[type="date"]:focus {
+  outline: none;
+  border-color:#2196F3;
+  box-shadow: inset 0.5px 0.5px 0.5px 0.5px #dbfdff;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #e2e2e2;
+}
+
+
+</style>
+</head>
+
+
+
+
+<body id="body" onload="myFunction()">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+<div class="main-content">
+<div id="mySidenav" class="form-basic w3-sidenav w3-dropnav w3-dropdown-click w3-azure-blue">
+    <a href="javascript:void(0)" class="w3-hover-red w3-closebtn" onclick="closeNav()">&times;</a>
+    <br>
+    <br>
+    <a class="active" href="index.html">Dashboard</a>
+    <a href="Log1.html">Log1</a>
+    <a href="Log2.html">Log2</a>
+    <a href="Log3.html">Log3</a>
+</div>
+<div id="main" style="width:0px;height:0px;padding:0px;background-color:#39393a;">
+    <i style="cursor:pointer;margin:20px;font-size:35px;background-color:transparent;color:#fff" onclick="openNav()" class="w3-display-topleft material-icons">&#xE5D2;</i>
+</div>
+<ul class="w3-navbar w3-display-topmiddle w3-text-white" style="color:#fff!important">
+    <li><a class="active w3-text-white" href="index.html">Dashboard</a></li>
+    <li><a class="w3-text-white" href="Log1.html">Log1</a></li>
+    <li><a class="w3-text-white" href="Log2.html">Log2</a></li>
+    <li><a class="w3-text-white" href="Log3.html">Log3</a></li>
+    <!--  <div id="chart_div1" style="" class="w3-center w3-text-teal"></div>  -->
+
+</ul>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "200px";
+			document.getElementById("mySidenav").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+			document.getElementById("inhalt").style.marginLeft = "200px";
+			document.getElementById("inhalt").style.filter = 'alpha(opacity=50)';
+			document.getElementById("inhalt").style.opacity = "0.4";
+			document.getElementById("main").style.color = "#ff6c49";
+			document.getElementById("main").style.display = "none";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("inhalt").style.marginLeft = "0";
+			document.getElementById("inhalt").style.filter = null;
+			document.getElementById("inhalt").style.opacity = null;
+			document.getElementById("main").style.color = "red";
+			document.getElementById("main").style.display = "block";
+			document.body.style.backgroundColor = "#efefef";
+		}
+	</script>
+
+
+<div id="inhalt" class="main-content">
+    <form class="form-basic" method="post" action="#">
+
+        <header class="w3-azure-blue imate-top">
+            <img src="img/logo.png" alt="Fritz Gruppe" style="width:150px;height:30px;margin:20px;" class="margin w3-display-topright">
+            <!-- <h1 style="text-transform: uppercase; font: bold 25px/50px Georgia, serif;">KPI Dachboard</h1>	 -->
+            <!-- <a href="http://www.fritz-gruppe.de/">Fritz-Gruppe.de</a>	 -->
+        </header>
+        <nav class="w3-sidenav w3-transparent" style="width:28%;position:static!important;">
+            <ul class="w3-ul w3-margin-left">
+                <span class="w3-code w3-text-teal w3-padding-left">  KPI Ziel:  &nbsp; 100 % &nbsp;&nbsp;&nbsp;&nbsp;</span><br/><br/>
+                <p>
+                    <div id="fliptabelle" class="w3-btn w3-ripple w3-blue w3-medium "><i class="w3-xxlarge w3-margin-right material-icons">&#xE2BD;</i>Anzeige Datenbank</div>
+                </p><br/>
+
+                <input type="date" name="date" id="search" value="" placeholder="Bsp. 01.01.2017"> <i class="material-icons w3-xlarge w3-text-gray">&#xE8B6; </i></input>
+                <label class="validity"></label>
+                <label class="w3-text-grey w3-medium" id="placeholder"></label>
+				<!-- <div ng-app="myApp" ng-controller="myCtrl">
+				<select ng-change="function(samra)" ng-model="selectedDatum" ng-options="x.Datum for x in cars" id="suchen"></select>
+				<h1>{{selectedDatum.Datum}}</h1>
+				<p>{{selectedDatum.KACO}}</p>
+
+				</div> -->
+
+                					<!-- <div id='samra'></div><br/> -->
+                <!-- <h3 class="w3-bottombar w3-col s2 w3-border-amber" style="font-weight:800;">BÖHö1 OG</h3> -->
+            </ul>
+        </nav>
+        <!-- ..........................................................table start.................................................... -->
+
+        <div class="w3-display-container" id="paneltabelle" style="display:none;margin:30px 20px 150px 20px;">
+			<hr class="w3-border">
+			<span onclick="this.parentElement.style.display='none'"
+				  class="w3-closebtn w3-display-topleft"><i class="material-icons w3-hover-blue-grey w3-red w3-xlarge ">close</i></span>
+            <table id="table" class="btn-default w3-small" data-striped="true" data-toggle="table" data-toolbar="#toolbar" data-search="true"
+					data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-pagination="true" data-show-export="true"
+					data-page-list="[10, 25, 50, 100, ALL]" data-page-size="10" data-page-number="1000">
+                <thead>
+                    <tr>
+                        <th class="w3-bottombar w3-blue-grey">Datum</th>
+                        <th colspan="20" class="w3-center w3-blue-grey w3-bottombar">Leistungsindikator</th>
+						<th colspan="4" class="w3-center w3-green w3-bottombar">Arbeitsstunden</th>
+                        <th colspan="4" class="w3-center w3-red w3-bottombar">KPI</th>
+                    </tr>
+                    <tr>
+                        <th data-field="Datum" data-sortable="false">Datum</th>
+                        <th data-field="KACO" data-sortable="true">KACO</th>
+                        <th data-field="KACO_GSD" data-sortable="true">GSD</th>
+                        <th data-field="Söhner" data-sortable="true">Söhner</th>
+                        <th data-field="LTI" data-sortable="true">LTI</th>
+                        <th data-field="Intersport" data-sortable="true">Intersport</th>
+                        <th data-field="KS_Huayu" data-sortable="true">KS</th>
+                        <th data-field="Weber_wagenheber" data-sortable="true">Weber Heber</th>
+						<th data-field="Weber_Konsi" data-sortable="true">Weber Konsi</th>
+						<th data-field="Schiffer_Stadt" data-sortable="true">Schiffer Stadt</th>
+                        <th data-field="BöHö1_OG" data-sortable="true" class="w3-weight">Bö OG</th>
+                        <th data-field="Porsche" data-sortable="true">Porsche</th>
+						<th data-field="VW" data-sortable="true">VW</th>
+						<th data-field="Audi_A8" data-sortable="true">Audi A8</th>
+						<th data-field="Weber" data-sortable="true">Weber</th>
+                        <th data-field="Keller" data-sortable="true" class="w3-weight">Keller</th>
+                        <th data-field="Mann_Schröder" data-sortable="true">M&amp;S</th>
+                        <th data-field="Unilever" data-sortable="true">Unilever</th>
+						<th data-field="SKH" data-sortable="true">SKH</th>
+                        <th data-field="Bechtle" data-sortable="true" class="w3-weight">Bechtle</th>
+                        <th data-field="GIF" data-sortable="true" class="w3-weight">GIF</th>
+                        <th data-field="IST_BöHö1OG" data-sortable="true" class="w3-text-green">IST BöHö1 </th>
+                        <th data-field="IST_Keller" data-sortable="true" class="w3-text-green">IST Keller</th>
+                        <th data-field="IST_Bechtle" data-sortable="true" class="w3-text-green">IST Bechtle</th>
+                        <th data-field="IST_GIF" data-sortable="true" class="w3-text-green">IST GIF</th>
+                        <th data-field="KPI_BöHö_OG" data-sortable="true" class="w3-text-red">KPI Bö OG</th>
+                        <th data-field="KPI_Keller" data-sortable="true" class="w3-text-red">KPI Keller</th>
+                        <th data-field="KPI_Bechtle" data-sortable="true" class="w3-text-red">KPI Bechtle</th>
+                        <th data-field="KPI_GIF" data-sortable="true" class="w3-text-red">KPI GIF</th>
+                    </tr>
+                </thead>
+            </table>
+			<hr class="w3-border">
+        </div>
+        <br><br><br><br>
+        <!-- ..........................................................table end........................................... -->
+		
+        <div class="w3-container" style="margin-top:-220px;">
+			<div id="loader" style="top:190px;"></div>
+			<div style="display:none;" id="myDiv">
+            <div id="chart_div1" class="w3-center w3-text-blue-gray w3-container  animate-bottom" style="margin-top:0px;"></div>
+			</div>
+			<!-- <p class="marquee">
+				<span id="achtung" class="line__wrap w3-center">
+					 <span class="line">
+					<i class="w3-xxlarge material-icons">&#xE88F;</i>
+					Weber und Audi A8 im Keller, Unilever/Bechtle sind nicht erfasst.
+					</span> 
+				</span>
+			</p> -->
+		</div>	
+		<div class="w3-margin w3-row">
+		<div class="w3-col s6 w3-card-8 w3-margin-left w3-right" method="post" action="#">
+                <div id="container_7tage" class="" style="height:250px!important;"></div>
+            </div>   
+            <div class="w3-col s3 w3-card-8  w3-right">
+                <div id="container-dash" style="min-width:250px;height:250px;"></div>
+            </div>
+			  						
+		</div>
+		<div class="w3-margin w3-row">
+			<div class="w3-col s6 w3-card-8 w3-margin-bottom w3-right" method="post" action="#">
+                <div id="container_IST" style="height:250px!important;"></div>
+            </div>  
+        </div>
+		<!-- diagramme models -->
+		<div>
+		<div class="modal fade modal-boho1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg" role="document" style="width:95%">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Logistik 1 - BöHö1 OG - KPI und Leistung Diagramm</h4>
+			    </div>
+				<div class="modal-body" >
+				   <div id="container2017_q2" style="width:92%;"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="modal fade modal-keller" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg" role="document" style="width:95%">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Logistik 1 - Keller - KPI und Leistung Diagramm</h4>
+			    </div>
+				<div class="modal-body" >
+				   <div id="keller_q2_2017" style="width:92%;"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="modal fade modal-bechtle" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg" role="document" style="width:95%">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Logistik 1 - Bechtle Halle - KPI und Leistung Diagramm</h4>
+			    </div>
+				<div class="modal-body" >
+				   <div id="bechtle_q2_2017" style="width:92%;"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="modal fade modal-gif" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+			<div class="modal-dialog modal-lg" role="document" style="width:95%">
+				<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">GIF - KPI und Leistung Diagramm</h4>
+			    </div>
+				<div class="modal-body" >
+				   <div id="GIF_container2017_q2" style="width:92%;"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+				</div>
+				
+			</div>
+		</div>
+		</div>
+        <!--............................................................................................ -->
+  
+
+    </form>
+</div>
+</div>
+<footer>
+    Powerd by: Suliman Farzat
+</footer>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Diagramm -->
+<script type="text/javascript" src="js/Highcharts.js"></script>
+<script type="text/javascript" src="js/modules/treemap.js"></script>
+<script type="text/javascript" src="js/exporting.js"></script>
+<script type="text/javascript" src="js/hochdiagramm-mehr.js"></script>
+<script type="text/javascript" src="js/highstock.js"></script> 
+<script type="text/javascript" src="js/log1/DashboardDiagram.js"></script> 
+<!-- BöHö1 OG -->
+<script type="text/javascript" src="js/log1/BöHö1OG_q2_2017_kunden.js"></script>
+<script type="text/javascript" src="js/log1/Keller/keller_q2_2017_kunden.js"></script>
+<script type="text/javascript" src="js/log1/Bechtle/bechtle_q2_2017_kunden.js"></script>
+<script type="text/javascript" src="js/log1/gif/GIF_q2_2017.js"></script>
+
+
+
+<!-- datenbank -->
+<script type="text/javascript" src="js/log1/Log1-Datenbank.js"></script>
+<script type="text/javascript" src="js/log2/Log2-Datenbank.js"></script>
+
+<!-- dashboard -->
+<!-- <script type="text/javascript" src="js/dashboard.js"></script> -->
+
+<!-- table -->
+<script type="text/javascript" src="js/bootstrap-table-master/docs/assets/js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-master/docs/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-master/dist/bootstrap-table.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+<!--  put your locale files after bootstrap-table.js -->
+<script type="text/javascript" src="js/bootstrap-table-master/docs/dist/locale/bootstrap-table-de-DE.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar.js"></script>
+<script type="text/javascript" src="js/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+<script src="js/bootstrap-table-master/docs/dist/extensions/filter/bootstrap-table-filter.js"></script>
+<!-- google chart -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+         $(document).ready(function() {
+         	$("#fliptabelle").click(function() {
+         		$("#paneltabelle").slideToggle("slow");
+         	});
+         });
+</script>
+<script type="text/javascript">
+      $('#table').bootstrapTable({
+          data: datenbank
+      });
+      
+</script> 
+<script>
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage,2000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.cars = datenbank;
+});
+</script>
+
+<script>
+/* 	************************************************************************** */
+var boho1 = "",
+    keller = "",
+    bechtle = "",
+    gif = "",
+	dat = "";
+
+var ziel_boho = 30,
+    ziel_keller = 30,
+    ziel_bechtle = 18.5,
+    ziel_gif = 20;
+
+var n1="",n2="",n3="",n4="",n5="",n6="";	
+for (var i = 0; i < datenbank.length ; i++) {
+    var n1 = ((datenbank[i].KPI_BöHö_OG) / ziel_boho) * 100,
+    n2 = ((datenbank[i].KPI_Keller) / ziel_keller) * 100,
+    n3 = ((datenbank[i].KPI_Bechtle) / ziel_bechtle) * 100,
+    n4 = ((datenbank[i].KPI_GIF) / ziel_gif) * 100;
+    dat = datenbank[i].Datum;
+	}
+/*for (var i = 0; i < datenbank_2.length ; i++) {
+	
+    var n5 = (datenbank_2[i].CH_KPI)* 100,
+    n6 = (datenbank_2[i].BöHö3_KPI)* 100,
+	dat2 = datenbank_2[i].Datum;
+	if (dat == dat2) break;
+	}	*/
+	
+var boho1 = n1.toFixed().toString();
+var keller = n2.toFixed().toString();
+var bechtle = n3.toFixed().toString();
+var gif = n4.toFixed().toString();
+//var chemie = n5.toFixed().toString();
+// boho3 = n6.toFixed().toString();
+
+var ave = ((n1 + n2 + n3 + n4) / 4).toFixed();
+var log1 = ave.toString();
+ 
+	//die farbe ändert sich nach KPI 100%
+    if (n1 >= 100){var boho1_g = boho1.fontcolor('LimeGreen') + ' %'.fontcolor('LimeGreen');} else {var boho1_g = boho1.fontcolor('red') + ' %'.fontcolor('red');}
+	if (n2 >= 100){var keller_g = keller.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var keller_g = keller.fontcolor('red') + ' %'.fontcolor('red');}
+	if (n3 >= 100){var bechtle_g = bechtle.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var bechtle_g = bechtle.fontcolor('red') + ' %'.fontcolor('red');}
+	if (n4 >= 100){var gif_g = gif.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var gif_g = gif.fontcolor('red') + ' %'.fontcolor('red');}
+	if (ave >= 100){var log1_g = log1.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');var dat_g = dat.fontcolor('LimeGreen');} else {var log1_g = log1.fontcolor('red') + ' %'.fontcolor('red');var dat_g = dat.fontcolor('red');}
+	//if (n5 >= 100){var chemie_g = chemie.fontcolor('LimeGreen') + ' %'.fontcolor('LimeGreen');} else {var chemie_g = chemie.fontcolor('red') + ' %'.fontcolor('red');}
+	//if (n6 >= 100){var boho3_g = boho3.fontcolor('LimeGreen') + ' %'.fontcolor('LimeGreen');} else {var boho3_g = boho3.fontcolor('red') + ' %'.fontcolor('red');}
+
+//mittelwert
+/*if (n1 === 0 || n2 === 0 || n3 === 0 ){
+	var ave = ((n1 + n2 + n3) /3).toFixed(1);
+}
+ 
+var mittel = 0;
+var nulls = 0;
+var co = "";
+var total = 0;
+for (var x = 0; x < datenbank.length; x++){
+	if (datenbank[x].Datum === 0){
+		co += datenbank[x].Datum;
+		nulls = co.length;
+	}
+	total += datenbank[x].Datum;
+	
+}	 */
+//document.getElementById('samra').innerHTML = ave;
+/* x.ctrlContinue.onclick = function () {
+    writdocument.innerHTML = ' <h2>Modal Header</h2>'
+}; */
+
+/* **************************************start google chart********************************************** */
+google.charts.load('current', {
+    packages: ["orgchart"]
+});
+google.charts.setOnLoadCallback(drawChart);
+datenbank;
+datenbank_2;
+
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Name');
+    data.addColumn('string', 'Manager');
+    data.addColumn('string', 'ToolTip');
+
+    // For each orgchart box, provide the name, manager, and tooltip to show.
+    data.addRows([
+        [{
+                v: 'fritz',
+                f: '<div class="w3-xlarge w3-padding-12">Fritz Logistik</div>' + 'KPI von: ' +'<div style="color:red;font:bold 16px Lucida Console">'+ dat_g + '</div>'
+            },
+            '', 'KPI'
+        ],
+        [{
+                v: 'log1',
+                f: '<a href="log1.html" class="w3-padding-24" style="text-decoration:none; font-size:16px">LOG1</a>' +
+				'<br/><div style="font:bold 16px Lucida Console">' +
+				log1_g + '</div>'
+            },
+            'fritz', 'Mittelwert zwischen (BöHö OG + Keller + Bechtle + GIF): ' + log1 + ' %'
+        ],
+        ['BöHö1 OG' + '<br/><button type="button" class="btn btn-link w3-weight w3-padding-8" data-toggle="modal" data-target=".modal-boho1">'
+		+ boho1_g +	'</button>', 'log1', boho1 + ' %' ],
+		['Keller' + '<br/><button type="button" class="btn btn-link w3-weight w3-padding-8" data-toggle="modal" data-target=".modal-keller">'
+		+ keller_g + '</button>', 'log1', keller + ' %'],
+        ['Bechtle' + '<br/><button type="button" class="btn btn-link w3-weight w3-padding-8" data-toggle="modal" data-target=".modal-bechtle">'
+		+ bechtle_g + '</button>', 'log1', bechtle + ' %' ],     
+        ['GIF' + '<br/><button type="button" class="btn btn-link w3-weight w3-padding-8" data-toggle="modal" data-target=".modal-gif">'
+		+ gif_g + '</button>', 'log1', gif + ' %'],
+        ['A14', 'log1', ''],
+        [{
+            v: 'LOG2',
+            f: '<a href="log2.html" style="text-decoration:none; font-size:16px">LOG2</a>'
+        }, 'fritz', ''],
+        ['BöHö3' , 'LOG2', ''],
+        ['Chemie', 'LOG2', ''],
+        ['Faurecia', 'LOG2', ''],
+        ['Wafi+AGA', 'LOG2', '']
+    ]);
+    // Set chart options
+    var options = {
+        'title': 'Fritz Logistik',
+        'width': 1000,
+        'height': 900
+    };
+
+    // Create the chart.
+    var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
+    // Draw the chart, setting the allowHtml option to true for the tooltips.
+    chart.draw(data, {
+        allowHtml: true
+    });
+}
+//*************************************************end google chart***************************************************
+
+//*************************************************start high chart***************************************************
+$(function() {
+    /* 	************************************************ */
+    /*var boho1 = "", keller = "", bechtle = "" , dat = "";
+    for (var i = 0; i < datenbank.length ; i++){
+    	boho1 = datenbank[i].KPI_BöHö_OG;
+    	keller = datenbank[i].KPI_Keller;
+    	bechtle = datenbank[i].KPI_Bechtle;
+    	dat = datenbank[i].Datum;
+    	 };*/
+    //var s1 = keller.toString() 
+
+    /************************************************* */
+
+
+    var data = {
+            'LOG 1': {
+                'BöHö1 OG': {
+                    'KPI': boho1
+                },
+                'Keller': {
+                    'KPI': keller
+                },
+                'Bechtle Halle': {
+                    'KPI': bechtle
+                },
+                'GIF': {
+                    'KPI': gif
+                }
+                /*'A 14': {
+                    'KPI': null
+                }, */
+            },
+            'LOG 2': {
+                'BöHö3': {
+                    'KPI': '0'
+                },
+                'Chemie Halle': {
+                    'KPI': '0'
+                }
+            }
+            /* 'LOG 3': {
+                '???': {
+                    'KPI': '0'
+                },
+                '###': {
+                    'KPI': '0'
+                }
+            } */
+        },
+        points = [],
+        regionP,
+        regionVal,
+        regionI = 7,
+        countryP,
+        countryI,
+        causeP,
+        causeI,
+        region,
+        country,
+        cause,
+        causeName = {
+            'KPI': 'KPI'
+        };
+
+    for (region in data) {
+        if (data.hasOwnProperty(region)) {
+            regionVal = 0;
+            regionP = {
+                id: 'id_' + regionI,
+                name: region,
+                color: Highcharts.getOptions().colors[regionI]
+            };
+            countryI = 0;
+            for (country in data[region]) {
+                if (data[region].hasOwnProperty(country)) {
+                    countryP = {
+                        id: regionP.id + '_' + countryI,
+                        name: country,
+                        parent: regionP.id
+                    };
+                    points.push(countryP);
+                    causeI = 0;
+                    for (cause in data[region][country]) {
+                        if (data[region][country].hasOwnProperty(cause)) {
+                            causeP = {
+                                id: countryP.id + '_' + causeI,
+                                name: causeName[cause],
+                                parent: countryP.id,
+                                value: (+data[region][country][cause])
+                            };
+                            regionVal += causeP.value;
+                            points.push(causeP);
+                            causeI = causeI + 1;
+                        }
+                    }
+                    countryI = countryI + 1;
+                }
+            }
+            regionP.value = (regionVal / countryI).toFixed(1);
+            points.push(regionP);
+            regionI = regionI + 1;
+        }
+    }
+    Highcharts.chart('container-dash', {
+        chart: {
+            backgroundColor: '#fff',
+        },
+        series: [{
+            type: 'treemap',
+            layoutAlgorithm: 'squarified',
+            allowDrillToNode: true,
+            animationLimit: 1000,
+            dataLabels: {
+                enabled: false
+            },
+            levelIsConstant: false,
+            levels: [{
+                level: 1,
+                dataLabels: {
+                    enabled: true
+                },
+                borderWidth: 5
+            }],
+            data: points
+        }],
+        subtitle: {
+            text: 'Fritz Logistik - KPI Dashboard <a href="index.html"></a>.'
+        },
+        title: {
+            text: dat
+        }
+    });
+});
+//******************************************************end high chart********************************
+
+
+//**************************************start search*************************************
+/* $('button').click(function(){
+    var find = $('#search').val();
+var found_names = $.grep(datenbank, function(v) {
+    return v.Datum === find ;
+    
+}); */
+//$('#suchen').change(samra);
+//samra();
+$('#search').keyup(function samra() {
+    var find = $('#search').val();
+    if (find != "") {
+        var found_names = $.grep(datenbank, function(v) {
+            return v.Datum === find;
+        });
+    } else {
+        find = ""
+        var found_names = datenbank;
+    }
+    //start if
+    $('#placeholder').empty();
+    console.log(found_names.length)
+    if (found_names.length > 0) {
+        console.log(found_names)
+        $(found_names).each(function() {
+            var output4 = this.Datum,
+                output1 = (this.KPI_BöHö_OG / 30) * 100,
+                output2 = (this.KPI_Keller/ 30) * 100,
+                output3 = (this.KPI_Bechtle/ 18.5) * 100,
+                output5 = (this.KPI_GIF/ 20) * 100;
+		$('#placeholder').append(output4 + '<i class="w3-text-green w3-xlarge material-icons">done</i>');
+           /* if (output1 == 0 || output2 == 0 || output3 == 0) {
+                var co = "";
+                var count = 0;
+                //var mittel = (output1+output2+output3)/3;
+                co += output1 + output2 + output3;
+                count = co.length;
+                //document.getElementById('samra').innerHTML = count;
+                var mittel = (output1 + output2 + output3) / (3 - count);
+            } else {
+                var mittel = (output1 + output2 + output3) / 3;
+            } 
+            $('#placeholder').append(output4 + '<i class="w3-text-green w3-xlarge material-icons">done</i>');*/
+            //document.getElementById('search').style.color = '#3a3a3a';
+            /* 	************************************************ */
+            var boho1 = "",
+                keller = "",
+                bechtle = "",
+                dat = "";
+            /* for (var i = 0; i < datenbank.length; i++){
+            	n1 = datenbank[i].KPI_BöHö_OG;
+            	n2 = datenbank[i].KPI_Keller;
+            	n3 = datenbank[i].KPI_Bechtle;
+            	dat = datenbank[i].Datum;
+            	 };  */
+            var boho1 = output1.toFixed().toString();
+            var keller = output2.toFixed().toString();
+            var bechtle = output3.toFixed().toString();
+            var gif = output5.toFixed().toString();
+            var dat = output4;
+            var ave = ((output1 + output2 + output3 + output5)/ 4).toFixed(1);
+            var log1 = ave;
+		   
+	//die farbe ändert sich nach KPI 100%
+    if (output1 >= 100){var boho1_g = boho1.fontcolor('LimeGreen') + ' %'.fontcolor('LimeGreen');} else {var boho1_g = boho1.fontcolor('red') + ' %'.fontcolor('red');}
+	if (output2 >= 100){var keller_g = keller.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var keller_g = keller.fontcolor('red') + ' %'.fontcolor('red');}
+	if (output3 >= 100){var bechtle_g = bechtle.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var bechtle_g = bechtle.fontcolor('red') + ' %'.fontcolor('red');}
+	if (output5 >= 100){var gif_g = gif.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen');} else {var gif_g = gif.fontcolor('red') + ' %'.fontcolor('red');}
+	if (ave >= 100){var log1_g = log1.fontcolor('LimeGreen')+ ' %'.fontcolor('LimeGreen'); dat_g = dat.fontcolor('LimeGreen');} else {var log1_g = log1.fontcolor('red') + ' %'.fontcolor('red'); dat_g = dat.fontcolor('red');}
+
+            /* 	************************************************ */
+
+            /* 	*****************---------------------------start google charts--------------------------------******************************* */
+
+            google.charts.load('current', {
+                packages: ["orgchart"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            datenbank;
+			datenbank_2;
+
+            function drawChart() {
+                var data = new google.visualization.DataTable();
+                data.addColumn('string', 'Name');
+                data.addColumn('string', 'Manager');
+                data.addColumn('string', 'ToolTip');
+
+                    // For each orgchart box, provide the name, manager, and tooltip to show.
+    data.addRows([
+        [{
+                v: 'fritz',
+                f: '<div class="w3-xlarge w3-padding-12">Fritz Logistik</div>'+ 'KPI von: ' + '<div style="color:red;font:bold 16px Lucida Console">' + dat_g + '</div>'
+            },
+            '', 'KPI'
+        ],
+        [{
+                v: 'log1',
+                f: '<a href="log1.html" class="w3-padding-24" style="text-decoration:none; font-size:16px">LOG1</a>' +
+				'<br/><div style="font:bold 16px Lucida Console">' +
+				log1_g + '</div>'
+            },
+            'fritz', 'Mittelwert zwischen (BöHö OG + Keller + Bechtle + GIF): ' + log1 + ' %'
+        ],
+        ['BöHö1 OG' + '<br/><div class="w3-padding-12" style="font:bold 14px Lucida Console">' + boho1_g + '</div>', 'log1', boho1 + ' %' ],
+		['Keller' + '<br/><div class="w3-padding-12" style="font:bold 14px Lucida Console">' + keller_g + '</div>', 'log1', keller + ' %'],
+        ['Bechtle' + '<br/><div class="w3-padding-12" style="font:bold 14px Lucida Console">' + bechtle_g + '</div>', 'log1', bechtle + ' %' ],        
+        ['GIF' + '<br/><div class="w3-padding-12" style="font:bold 14px Lucida Console">' + gif_g + '</div>', 'log1', gif + ' %'],
+        ['A14', 'log1', ''],
+        [{
+            v: 'LOG2',
+            f: '<a href="log2.html" style="text-decoration:none; font-size:16px">LOG2</a>'
+        }, 'fritz', ''],
+        ['BöHö3' , 'LOG2', ''],
+        ['Chemie', 'LOG2', ''],
+        ['Faurecia', 'LOG2', ''],
+        ['Wafi+AGA', 'LOG2', '']
+    ]);
+    // Set chart options
+    var options = {
+        'title': 'Fritz Logistik',
+        'width': 1000,
+        'height': 900
+    };
+
+    // Create the chart.
+    var chart = new google.visualization.OrgChart(document.getElementById('chart_div1'));
+    // Draw the chart, setting the allowHtml option to true for the tooltips.
+    chart.draw(data, {
+        allowHtml: true
+    });
+}
+/* 	*****************************************************end google charts******************************************** */
+
+/* *****************************************************start high chart********************************************** */
+            $(function() {
+                var data = {
+                        'LOG 1': {
+                            'BöHö1 OG': {
+                                'KPI': boho1
+                            },
+                            'Keller': {
+                                'KPI': keller
+                            },
+                            'Bechtle Halle': {
+                                'KPI': bechtle
+                            },
+                            'GIF': {
+                                'KPI': gif
+                            },
+                            /* 'A 14': {
+                                 'KPI': null
+                             }, */
+                        },
+                        'LOG 2': {
+                            'BöHö3': {
+                                'KPI': '0'
+                            },
+                            'Chemie Halle': {
+                                'KPI': '0'
+                            },
+                            'Faurecia': {
+                                'KPI': '0'
+                            },
+                            'Wafi+AGA': {
+                                'KPI': '0'
+                            },
+                            'Warenfelter': {
+                                'KPI': '0'
+                            },
+                        },
+                        'LOG 3': {
+                            '???': {
+                                'KPI': '0'
+                            },
+                            '###': {
+                                'KPI': '0'
+                            },
+                        }
+                    },
+                    points = [],
+                    regionP,
+                    regionVal,
+                    regionI = 7
+                    countryP,
+                    countryI,
+                    causeP,
+                    causeI,
+                    region,
+                    country,
+                    cause,
+                    causeName = {
+                        'KPI': 'KPI'
+                    };
+
+                for (region in data) {
+                    if (data.hasOwnProperty(region)) {
+                        regionVal = 0;
+                        regionP = {
+                            id: 'id_' + regionI,
+                            name: region,
+                            color: Highcharts.getOptions().colors[regionI]
+                        };
+                        countryI = 0;
+                        for (country in data[region]) {
+                            if (data[region].hasOwnProperty(country)) {
+                                countryP = {
+                                    id: regionP.id + '_' + countryI,
+                                    name: country,
+                                    parent: regionP.id
+                                };
+                                points.push(countryP);
+                                causeI = 0;
+                                for (cause in data[region][country]) {
+                                    if (data[region][country].hasOwnProperty(cause)) {
+                                        causeP = {
+                                            id: countryP.id + '_' + causeI,
+                                            name: causeName[cause],
+                                            parent: countryP.id,
+                                            value: (+data[region][country][cause])
+                                        };
+                                        regionVal += causeP.value;
+                                        points.push(causeP);
+                                        causeI = causeI + 1;
+                                    }
+                                }
+                                countryI = countryI + 1;
+                            }
+                        }
+                        regionP.value = (regionVal / countryI).toFixed(1);
+                        points.push(regionP);
+                        regionI = regionI + 1;
+                    }
+                }
+                Highcharts.chart('container-dash', {
+                    chart: {
+                        backgroundColor: '#fff',
+                    },
+                    series: [{
+                        type: 'treemap',
+                        layoutAlgorithm: 'squarified',
+                        allowDrillToNode: true,
+                        animationLimit: 1000,
+                        dataLabels: {
+                            enabled: false
+                        },
+                        levelIsConstant: false,
+                        levels: [{
+                            level: 1,
+                            dataLabels: {
+                                enabled: true
+                            },
+                            borderWidth: 5
+                        }],
+                        data: points
+                    }],
+                    subtitle: {
+                        text: 'Fritz Logistik - KPI Dashboard <a href="index.html"></a>.'
+                    },
+                    title: {
+                        text: dat
+                    }
+                });
+            });
+            //******************************************************end high chart********************************
+
+
+
+        });
+
+        ////*************************************************end search**********************************************		
+
+
+        //attention msg		 
+    } else {
+        $('#placeholder').html('<span style="color:red"  > Kein Arbeitstag</span>');
+        //document.getElementById('search').style.color = 'red';
+    }
+
+
+})
+</script>
+<script>
+var datu = [], kpi_bo=[], kpi_ke=[], kpi_be=[], kpi_gi =[], ist_boho =[], ist_keller =[], ist_bechtle =[], ist_gif =[];
+for (var i = datenbank.length -7 ; i < datenbank.length ; i++) {
+    kpi_bo.push(((datenbank[i].KPI_BöHö_OG) / ziel_boho) * 100);
+    kpi_ke.push(((datenbank[i].KPI_Keller) / ziel_keller) * 100);
+    kpi_be.push(((datenbank[i].KPI_Bechtle) / ziel_bechtle) * 100);
+    kpi_gi.push(((datenbank[i].KPI_GIF) / ziel_gif) * 100);
+	ist_boho.push(datenbank[i].IST_BöHö1OG);
+	ist_keller.push(datenbank[i].IST_Keller);
+	ist_bechtle.push(datenbank[i].IST_Bechtle);
+	ist_gif.push(datenbank[i].IST_GIF);
+    datu.push(datenbank[i].Datum);
+    };
+// 7 Tage
+$(function() {
+/*     Highcharts.setOptions({
+        colors: ['#ff6c49', '#fff', '#ffc107', '#67a5ec', '#e780e1', '#90ed7d', '#000', '#000', '#0000CD']
+    }); */
+
+Highcharts.chart('container_7tage', {
+
+    title: {
+        text: 'KPI - Letzte 7 Tage'
+    },
+	
+	xAxis: {
+            categories: datu
+        },
+
+    yAxis: {
+        title: {
+            text: 'KPI % '
+        },
+		plotLines: [{
+            value: 100,
+            width: 2,
+            color: 'green',
+            dashStyle: 'dash',
+            label: {
+                text: 'KPI Ziel 100% ',
+				color:'#fff',
+                align: 'right',
+                y: 5,
+                x: 80
+				}
+			}]
+    },
+	
+	chart: {
+      backgroundColor: {
+         linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+         stops: [
+            [0, '#fff'],
+            [1, '#fff']
+         ]
+      },
+	  type: 'spline'
+	  },
+	  
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+		//floating: true,
+		x:10,
+		y:-30
+    },
+	
+	tooltip: {
+            shared: true,
+            crosshairs: true,
+			useHTML: true,
+			headerFormat: '<small>{point.key}</small><table>',
+			pointFormat: '<tr><td style="color: {series.color}">{series.name}: </td>' +
+				'<td style="text-align: right"><b>{point.y} %</b></td></tr>',
+			footerFormat: '</table>',
+			valueDecimals: 0
+			},
+
+
+    series: [{
+        name: 'BöHö1 OG',
+        data: kpi_bo,
+		lineWidth: 3.5,
+		marker: {
+                radius: 6
+            }
+    }, {
+        name: 'Keller',
+        data: kpi_ke,
+		lineWidth: 3.5,
+		marker: {
+                radius: 6
+            }
+    }, {
+        name: 'Bechtle',
+        data: kpi_be,
+		lineWidth: 3.5,
+		marker: {
+                radius: 6
+            }
+    }, {
+        name: 'GIF',
+        data: kpi_gi,
+		lineWidth: 3.5,
+		marker: {
+                radius: 6
+            }
+    }]
+
+});
+});
+// the button action
+var i = 0;
+$('#button').click(function () {
+    chart.series[0].addPoint(50 * (i % 3));
+    i += 1;
+});
+
+// IST Szunden
+		
+		
+
+Highcharts.chart('container_IST', {
+    chart: {
+        type: 'column',
+		zoomType: 'x'
+    },
+    title: {
+        text: 'Die Arbeitsstunden (IST) sind aus ADO'
+    },
+    xAxis: {
+        categories: datu,
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Stunden'
+        }
+    },
+	legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle',
+		//floating: true,
+		x:10,
+		y:-30
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} Stunden</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.1,
+            borderWidth: 0,
+			borderRadius: 0.9,
+			groupPadding: 0.15
+        }
+    },
+    series: [{
+        name: 'IST BöHö1',
+        data: ist_boho
+
+    }, {
+        name: 'IST Keller',
+        data: ist_keller
+
+    }, {
+        name: 'IST Bechtle',
+        data: ist_bechtle
+
+    }, {
+        name: 'IST GIF',
+        data: ist_gif
+
+    }]
+});
+</script>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<!-- ***************************************
+*******powerd by Suliman Farzat 2017********
+*************for Fritz-Gruppe***************
+******************************************** -->
+<head>
+
+	<title>Fritz Gruppe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="CSS\w3.css">
+    <link rel="stylesheet" href="CSS\demo.css">
+	<link rel="stylesheet" href="CSS\form-basic.css">
+	<!-- table -->
+	<link rel="stylesheet" href="CSS/bootstrap-table.css">
+<!-- 	<link rel="stylesheet" href="js/bootstrap-table-master/dist/bootstrap-table.min.css"> -->
+	<link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+
+
+
+
+<body id="body">
+	<div id="mySidenav" class="form-basic w3-sidenav w3-dropnav w3-dropdown-click w3-azure-blue">
+		<a href="javascript:void(0)" class="w3-hover-red w3-closebtn" onclick="closeNav()">&times;</a>
+		<br>
+		<br>
+		<a href="index.html">Dashboard</a>
+		<a href="Log1.html">Log1</a>
+		<a class="active" href="Log2.html">Log2</a>
+		<a href="Log3.html">Log3</a>
+	</div>
+	<div id="main" style="width:0px;height:0px;padding:0px;background-color:#39393a;">
+		<i style="cursor:pointer;margin:20px;font-size:35px;background-color:transparent;color:#fff" onclick="openNav()" class="w3-display-topleft material-icons">&#xE5D2;</i>
+	</div>
+<ul class="w3-navbar w3-display-topmiddle w3-azure-blue">
+  <li><a class="w3-text-white" href="index.html">Dashboard</a></li>
+  <li><a class="w3-text-white"  href="Log1.html">Log1</a></li>
+  <li><a class="w3-text-white" href="Log2.html">Log2</a></li>
+  <li><a class="w3-text-white active" href="Log3.html">Log3</a></li>
+<!--  <div id="chart_div1" style="" class="w3-center w3-text-teal"></div>  -->
+
+</ul>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "200px";
+            document.getElementById("mySidenav").style.width = "200px";
+            document.getElementById("main").style.marginLeft = "200px";
+            document.getElementById("inhalt").style.marginLeft = "200px";
+            document.getElementById("inhalt").style.filter = 'alpha(opacity=50)';
+            document.getElementById("inhalt").style.opacity = "0.4";
+            document.getElementById("main").style.color = "#ff6c49";
+			document.getElementById("main").style.display = "none";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("inhalt").style.marginLeft = "0";
+            document.getElementById("inhalt").style.filter = null;
+            document.getElementById("inhalt").style.opacity = null;
+            document.getElementById("main").style.color = "red";
+			document.getElementById("main").style.display = "block";
+            document.body.style.backgroundColor = "#efefef";
+        }
+    </script>
+
+
+
+    <!-- log1 .............................................................................-->
+
+    <div id="inhalt" class="main-content">
+        <form class="form-basic w3-blue-grey" method="post" action="#">
+            <header class="w3-azure-blue imate-top">
+				<img src="img/logo.png" alt="Fritz Gruppe" style="width:150px;height:30px;margin:20px;" class="margin w3-display-topright">
+				<!-- <h1 style="text-transform: uppercase; font: bold 25px/50px Georgia, serif;">KPI Dachboard</h1>	 -->
+				<!-- <a href="http://www.fritz-gruppe.de/">Fritz-Gruppe.de</a>	 -->
+			</header>
+            <div class="w3-row ">
+                <a href="javascript:void(0)" onclick="openCity(event, 'Böhö3');">
+                    <div class="w3-quarter tablink w3-bottombar w3-border-cyan w3-hover-light-grey w3-padding w3-blue w3-text-white w3-center">###</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openCity(event, 'Chemie Halle');">
+                    <div class="w3-quarter tablink w3-bottombar w3-border-cyan w3-hover-light-grey w3-padding w3-blue w3-text-white w3-center">###</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openCity(event, 'Petronas');">
+                    <div class="w3-quarter tablink w3-bottombar w3-border-cyan w3-hover-light-grey w3-padding w3-blue w3-text-white w3-center">###</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openCity(event, 'MCHN');">
+                    <div class="w3-quarter tablink w3-bottombar w3-border-cyan w3-hover-light-grey w3-padding w3-blue w3-text-white w3-center">###</div>
+                </a>
+            </div>
+
+
+
+            <!-- BöHö1 .............................................................................-->
+
+            <div id="Böhö3" class="w3-container city w3-blue-grey" style="display:true">
+                <h3 class="form-title-row">###</h3>
+                <p class="w3-deep-orange"></p>
+            
+                <!-- ................................................................................................................ -->
+
+                <br>
+                <br>
+            </div>
+
+            <!-- keller....................................................................... -->
+
+            <div id="Chemie Halle" class="w3-container city" style="display:none">
+                <h2>##</h2>
+                <p>##.</p>
+
+                <div id="chart_div" style="height: 500px;" class="w3-hoverable form-container w3-animate-opacity w3-hover-light-blue"></div>
+            </div>
+
+            <!-- Bechtle...................................................................... -->
+
+            <div id="Petronas" class="w3-container city" style="display:none">
+                <h2>##</h2>
+                <p>##.</p>
+            </div>
+
+            <!-- GIF......................................................................... -->
+
+            <div id="MCHN" class="w3-container city" style="display:none">
+                <h2>##</h2>
+                <p>##.</p>
+            </div>
+
+            <!-- .......................................................................... -->
+
+            
+    </div>
+    </form>
+
+
+    <footer>
+        Powerd by: Suliman Farzat
+    </footer>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#flip").click(function() {
+                $("#panel").slideToggle("slow");
+            });
+        });
+        $(document).ready(function() {
+            $("#q1flip").click(function() {
+                $("#q1panel").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-border-deep-orange", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.firstElementChild.className += " w3-border-deep-orange";
+        }
+    </script>
+
+</body>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
+<!-- <script type="text/javascript" src="js\loader.js"></script> -->
+<!-- <script type="text/javascript" src="js\ComboChart.js"></script>	 -->
+
+<!-- Diagramm -->
+<script type="text/javascript" src="js\Highcharts.js"></script>
+<script type="text/javascript" src="js\exporting.js"></script>
+<script type="text/javascript" src="js\hochdiagramm-mehr.js"></script>
+<script type="text/javascript" src="js\zeichen-gauge.js"></script>
+
+<!-- Daten zu bearbeiten -->
+<script type="text/javascript" src="js\Q\q4_2016_kunden.js"></script>
+<script type="text/javascript" src="js\Q\q1_2017_kunden.js"></script>
+<script type="text/javascript" src="js\Q\q4.js"></script>
+<script type="text/javascript" src="js\Q\täglich.js"></script>
+<script type="text/javascript" src="js\Q\böhö1table.js"></script>
+
+
+
+
+</html>

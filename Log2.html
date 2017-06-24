@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<!-- ***************************************
+*******powerd by Suliman Farzat 2017********
+*************for Fritz-Gruppe***************
+******************************************** -->
+<head>
+
+	<title>Fritz Gruppe</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="CSS/w3.css">
+    <link rel="stylesheet" href="CSS/demo.css">
+	<link rel="stylesheet" href="CSS/form-basic.css">
+	<!-- table -->
+	<link rel="stylesheet" href="CSS/bootstrap-table.css">
+<!-- 	<link rel="stylesheet" href="js/bootstrap-table-master/dist/bootstrap-table.min.css"> -->
+	<link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+
+
+
+<body id="body">
+
+	<div id="mySidenav" class="form-basic w3-sidenav w3-dropnav w3-dropdown-click w3-azure-blue">
+		<a href="javascript:void(0)" class="w3-hover-red w3-closebtn" onclick="closeNav()">&times;</a>
+		<br>
+		<br>
+		<a href="index.html">Dashboard</a>
+		<a href="Log1.html">Log1</a>
+		<a class="active" href="Log2.html">Log2</a>
+		<a href="Log3.html">Log3</a>
+	</div>
+	<div id="main" style="width:0px;height:0px;padding:0px;background-color:#39393a;">
+		<i style="cursor:pointer;margin:20px;font-size:35px;background-color:transparent;color:#fff" onclick="openNav()" class="w3-display-topleft material-icons">&#xE5D2;</i>
+	</div>
+<ul class="w3-navbar w3-display-topmiddle w3-azure-blue">
+  <li><a class="w3-text-white" href="index.html">Dashboard</a></li>
+  <li><a class="w3-text-white" href="Log1.html">Log1</a></li>
+  <li><a class="active w3-text-white" href="Log2.html">Log2</a></li>
+  <li><a class="w3-text-white" href="Log3.html">Log3</a></li>
+<!--  <div id="chart_div1" style="" class="w3-center w3-text-teal"></div>  -->
+
+</ul>
+
+	<script>
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "200px";
+			document.getElementById("mySidenav").style.width = "200px";
+			document.getElementById("main").style.marginLeft = "200px";
+			document.getElementById("inhalt").style.marginLeft = "200px";
+			document.getElementById("inhalt").style.filter = 'alpha(opacity=50)';
+			document.getElementById("inhalt").style.opacity = "0.4";
+			document.getElementById("main").style.color = "#ff6c49";
+			document.getElementById("main").style.display = "none";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.getElementById("main").style.marginLeft = "0";
+			document.getElementById("inhalt").style.marginLeft = "0";
+			document.getElementById("inhalt").style.filter = null;
+			document.getElementById("inhalt").style.opacity = null;
+			document.getElementById("main").style.color = "red";
+			document.getElementById("main").style.display = "block";
+			document.body.style.backgroundColor = "#efefef";
+		}
+	</script>
+
+
+
+<!--........................................................... log1 .............................................................................-->
+
+	<div id="inhalt" class="main-content">
+		<form class="form-basic w3-blue-grey" method="post" action="#">
+		
+			<header class="w3-azure-blue imate-top">
+				<img src="img/logo.png" alt="Fritz Gruppe" style="width:150px;height:30px;margin:20px;" class="margin w3-display-topright">
+				<!-- <h1 style="text-transform: uppercase; font: bold 25px/50px Georgia, serif;">KPI Dachboard</h1>	 -->
+				<!-- <a href="http://www.fritz-gruppe.de/">Fritz-Gruppe.de</a>	 -->
+			</header>
+			
+			<div class="w3-row ">
+				<a href="javascript:void(0)" onclick="openCity(event, 'BöHö3');">
+					<div class="w3-quarter tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">BöHö3</div>
+				</a>
+				<a href="javascript:void(0)" onclick="openCity(event, 'Chemie Halle');">
+					<div class="w3-quarter tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Chemie Halle</div>
+				</a>
+				<a href="javascript:void(0)" onclick="openCity(event, 'Faurecia');">
+					<div class="w3-quarter tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Faurecia</div>
+				</a>
+				<a href="javascript:void(0)" onclick="openCity(event, 'Halle A6 A');">
+					<div class="w3-quarter tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Wafi & AGA</div>
+				</a>
+				<!-- <a href="javascript:void(0)" onclick="openCity(event, 'Warenfilter');">
+					<div class="w3-five tablink w3-bottombar w3-border-azure-blue w3-hover-border-trans w3-padding-8 w3-azure-blue w3-text-white w3-center">Warenfilter</div>
+				</a> -->
+
+			</div>
+
+
+
+<!-- ................................................................BöHö3 ..................................................................................................-->
+
+				<div id="BöHö3" class="w3-container city w3-blue-grey" style="display:none;">
+				<nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">				
+				<h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">BÖHö3</h3>				
+				<div>
+					<i id="fliptabelle" style="" class="w3-hover-text-blue material-icons w3-xxxlarge w3-accordion w3-text-amber" href="#">&nbsp;&#xE42A; </i>
+					<div style="" class="">#########</div>
+				</div>
+				</nav>
+
+						<!-- ................................................................................................................ -->
+
+						<div id="q1panel" style="display:none;width:auto;height:auto;">
+
+							<div class="w3-bordered" method="post" action="#">
+								<div id="c7" class="form-container w3-animate-opacity w3-margin-top" style="height:500px;margin:0 auto;"></div>
+
+							</div>
+						</div>
+						<br>
+						<!-- ................................................................................................................ -->
+
+						<!-- ................................................................................................................ -->
+
+						<!-- ................................................................................................................ -->
+					</div>
+
+
+			
+
+<!-- ...........................................................Chemie Halle.............................................................................................. -->
+
+			<div id="Chemie Halle" class="w3-container city " style="display:true">
+				<nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">				
+				<h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">ChemieHalle</h3>				
+				<div>
+					<i id="fliptabellechemie" style="" class="w3-hover-text-blue material-icons w3-xxxlarge w3-accordion w3-text-amber" href="#">&nbsp;&#xE42A; </i>
+					<div>Pauschale Tabelle ansehen</div>
+				</div>
+				</nav>
+			<!-- ..........................................................table start.................................................... -->				
+				<div class="w3-container" id="paneltabellechemie" style="display:none;margin:20px 0px 150px 0;">									
+									<table class="table btn-default table-responsive" 
+									 data-striped="true" data-toggle="table" data-toolbar="#toolbar" data-url="js/log2/Chemie_Gesamt.datenbank"
+									data-search="true" data-show-refresh="true" data-show-toggle="true" data-show-columns="true" data-pagination="true"
+									data-show-export="true" data-page-list="[10, 25, 50, 100, ALL]">						
+									    <thead>
+											<tr>
+												<th data-field="Datum" data-sortable="false">Datum</th>
+												<th data-field="KPI Handling" data-sortable="true">KPI Handling</th>
+												<th data-field="Eule-Bewegungsfaktor" data-sortable="true">Eule-Bewegungsfaktor</th>
+												<th data-field="WE Gesamt Bewegungen" data-sortable="true">WE Gesamt Bewegungen</th>
+												<th data-field="WA Gesamt Bewegungen" data-sortable="true">WA Gesamt Bewegungen</th>
+											</tr>
+										</thead>
+									</table>									
+									
+				</div><br><br><br><br>
+							
+<!-- ..........................................................table end........................................... -->
+
+
+				
+				<!-- <div class="w3-row w3-margin w3-center">
+					<div class="w3-col s5">
+						<i class="material-icons w3-xxxlarge" style="cursor:pointer;" onclick="document.getElementById('modal01').style.display='block'">&#xE01D;</i><br>Jan 2017
+						<div id="modal01" class="w3-modal">
+							<span onclick="document.getElementById('modal01').style.display='none'" class="w3-closebtn w3-hover-red w3-container w3-padding-16 w3-display-topright material-icons">&#xE5C9;</span>
+							<div class="w3-animate-zoom">
+								<div id="chemie_q1_2017" style="height:500px;" class="w3-hoverable form-container w3-animate-opacity w3-hover-light-blue"></div>
+							</div>
+						</div>
+					</div>
+				</div> -->
+				<div class="w3-container w3-animate-opacity">
+					<!-- <h2>KPI Dachboard</h2>
+				<p>Log1<em></em></p> -->
+					<div class="w3-row knopf" style="">
+						<div id="flip" style="min-width:100px;" class="w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('q1panel').style.display='none';return false;">
+							<i class="material-icons w3-xxxlarge">&#xE01D;</i>
+							<br>Q1 2017
+						</div>
+					   <div id="q1flip" style="min-width:100px;" class="w3-card-12 w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('panel').style.display='none';return false;">
+							<i class="material-icons w3-xxxlarge">&#xE01D;</i>
+							<br>Q2 2017
+						</div>
+						<div id="" style="min-width:100px;" class="w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('panel').style.display='none';return false;">
+							<i class="material-icons w3-xxxlarge">&#xE01D;</i>
+							<br>Q3 2017
+						</div>
+						<div id="" style="min-width:100px;" class="w3-blue w3-hover-new-blue w3-btn w3-margin-right w3-padding" onclick="document.getElementById('panel').style.display='none';return false;">
+							<i class="material-icons w3-xxxlarge">&#xE01D;</i>
+							<br>Q4 2017
+						</div> 
+					</div>
+
+
+					<div class="">
+						<div id="panel" style="display:none;width:auto;">
+							<div method="post" action="#">
+								<div id="chemie_q1_2017" class="form-container" style="width:100%;height:400px;"></div>																														
+							</div><br>
+						</div>
+						<div id="" style="display:none;width:auto;height:auto;">		
+						<div class="w3-margin-bottom" method="post" action="#">
+                           <div id="Chemie_container2017_q2" class="form-container w3-margin-top" style="width:100% !important;height:400px;margin:0 auto;">
+                              <div class="loader" style="width:100% !important;height:400px;margin:0 auto;"></div>
+                           </div>
+                        </div>     						
+						</div>
+						
+					</div>
+				</div>
+				<!-- ................................................................................................................ -->
+				<!-- <div class="w3-animate-opacity form-speed" style="">
+					<div class="form-container w3-hover-light-blue w3-margin" id="container-speed-chemie" style="width:400px;height:200px; float:left;"></div>
+					<div class="form-container w3-hover-light-blue w3-margin" id="container-rpm-chemie" style="width:400px;height:200px; float:left;"></div>
+				</div> -->
+				<!-- ................................................................................................................ -->
+				<br>
+				
+				
+				
+				
+					
+
+			</div>
+<!-- .....................faurecia................................................. -->
+			<div id="Faurecia" class="w3-container city " style="display:none;">
+				<h3 class="w3-bottombar w3-col s1 w3-border-amber" style="font-weight:bold;margin-top:100px;">Faurecia</h3>
+
+					
+
+			</div>
+<!-- .....................Halle A6 A................................................. -->
+			<div id="Halle A6 A" class="w3-container city " style="display:none;">
+				<nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">				
+				<h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">Halle A6</h3>				
+				<div>
+					<i id="fliptabelle" style="" class="w3-hover-text-blue material-icons w3-xxxlarge w3-accordion w3-text-amber" href="#">&nbsp;&#xE42A; </i>
+					<div style="" class="">#########</div>
+				</div>
+				</nav>
+					
+
+			</div>
+<!-- .....................Warenfilter................................................. -->
+			<div id="Warenfilter" class="w3-container city " style="display:none;">
+				<nav class="w3-sidenav w3-transparent" style="width:20%;position:static!important;">				
+				<h3 class="w3-bottombar w3-col s7 w3-border-amber" style="font-weight:800;">Warenfilter</h3>				
+				<div>
+					<i id="fliptabelle" style="" class="w3-hover-text-blue material-icons w3-xxxlarge w3-accordion w3-text-amber" href="#">&nbsp;&#xE42A; </i>
+					<div style="" class="">#########</div>
+				</div>
+				</nav>
+
+				
+
+			</div>
+
+		</form>
+	</div>
+
+	<footer>
+		Powerd by: Suliman Farzat
+	</footer>
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#flip").click(function() {
+				$("#panel").slideToggle("slow");
+			});
+		});
+		$(document).ready(function() {
+			$("#q1flip").click(function() {
+				$("#q1panel").slideToggle("slow");
+			});
+		});
+		$(document).ready(function() {
+			$("#fliptabellechemie").click(function() {
+				$("#paneltabellechemie").slideToggle("slow");
+			});
+		});
+	</script>
+
+	<script type="text/javascript">
+		function openCity(evt, cityName) {
+			var i, x, tablinks;
+			x = document.getElementsByClassName("city");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablink");
+			for (i = 0; i < x.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" w3-border-amber", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.firstElementChild.className += " w3-border-amber";
+		}
+	</script>
+	<script type="text/javascript">
+	var date = new Date((new Date()).valueOf() - 1000*60*60*24);
+		// request a weekday along with a long date
+	var options = { weekday: 'long', year: 'numeric', month: '2-digit', day: '2-digit' };
+		d = (date.toLocaleDateString('de-DE', options));
+		document.getElementById("gestern").innerHTML = d;		
+	</script>
+
+</body>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Diagramm -->
+<script type="text/javascript" src="js/Highcharts.js"></script>
+<script type="text/javascript" src="js/exporting.js"></script>
+<script type="text/javascript" src="js/hochdiagramm-mehr.js"></script>
+<script type="text/javascript" src="js/zeichen-gauge.js"></script>
+<!-- database -->
+<script type="text/javascript" src="js/log2/Log2-Datenbank.js"></script>
+<!-- Chemie -->
+<script type="text/javascript" src="js/log2/Chemie/Chemie_q1_2017_kunden.js"></script>
+<script type="text/javascript" src="js/log2/Chemie/Chemie_2017_q2.js"></script>
+<script type="text/javascript" src="js/log2/Chemie/Chemie_täglich.js"></script>
+<script type="text/javascript" src=""></script>
+
+
+<!-- table -->
+<script type="text/javascript"  src="js/bootstrap-table-master/docs/assets/js/jquery.min.js"></script>
+<script type="text/javascript"  src="js/bootstrap-table-master/docs/assets/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript"  src="js/bootstrap-table-master/dist/bootstrap-table.js"></script>
+<script type="text/javascript"  src="js/bootstrap-table-master/dist/bootstrap-table.min.js"></script>
+<!--  put your locale files after bootstrap-table.js -->
+<script type="text/javascript"  src="js/bootstrap-table-master/docs/dist/locale/bootstrap-table-de-DE.js"></script>
+<script type="text/javascript"  src="js/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar.js"></script>
+<script type="text/javascript"  src="js/bootstrap-table-master/dist/extensions/toolbar/bootstrap-table-toolbar.min.js"></script>
+<script src="js/bootstrap-table-master/docs/dist/extensions/filter/bootstrap-table-filter.js"></script>
+
+<script>
+function monthSorter(a, b) {
+    if (a.month < b.month) return -1;
+    if (a.month > b.month) return 1;
+    return 0;
+}
+</script>
+
+</html>
